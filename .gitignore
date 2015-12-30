@@ -4,5 +4,9 @@
 /.sass-cache
 /.idea
 
+lib/
+*.log
+.DS_Store
+
 *-compiled.js
 *-compiled.js.map

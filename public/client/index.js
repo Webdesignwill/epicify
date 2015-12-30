@@ -3,11 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "../sass/main.scss";
 
-class HelloMessage extends React.Component {
-  render() {
-    return <div>Hello {this.props.name}</div>;
+import Header from "./components/header/header.js";
+
+class Root extends React.Component{
+  render () {
+    return <Header />;
   }
-}
+};
 
-ReactDOM.render(<HelloMessage name="Sebastian" />, document.body);
-
+ReactDOM.render(<Root />, document.querySelector('main'));

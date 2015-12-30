@@ -1,11 +1,12 @@
 
 var WebpackDevServer = require("webpack-dev-server"),
-      webpack = require("webpack"),
-      config = require('./webpack.config.js');
+    webpack = require("webpack"),
+    config = require('./webpack.config.js');
 
 var compiler = webpack(config);
 
 var server = new WebpackDevServer(compiler, {
+  quiet : true,
   contentBase: "public/",
   hot: true,
   publicPath : "/public/assets/",

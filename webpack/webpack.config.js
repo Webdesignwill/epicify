@@ -2,9 +2,15 @@
 var path = require('path');
 
 module.exports = {
+
   entry : {
-    app : ["./public/client/index.js", "webpack-dev-server/client?http://localhost:8080"]
+    app : [
+      "./public/client/index.js",
+      "bootstrap",
+      "webpack-dev-server/client?http://localhost:8080"
+    ]
   },
+
   module : {
     loaders: [{
       test: /\.scss$/,
@@ -13,6 +19,9 @@ module.exports = {
       test: /\.js?$/,
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, '..', 'public/client')
+    },{
+      test: /bootstrap\/dist\/js\/umd\//,
+      loaders: ['imports?jQuery=jquery']
     }]
   },
   resolve: {
