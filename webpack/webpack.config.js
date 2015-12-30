@@ -1,15 +1,23 @@
 
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
 
   entry : {
     app : [
+      "bootstrap-loader",
       "./public/client/index.js",
-      "bootstrap",
       "webpack-dev-server/client?http://localhost:8080"
     ]
   },
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ],
 
   module : {
     loaders: [{
@@ -20,14 +28,19 @@ module.exports = {
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, '..', 'public/client')
     },{
-      test: /bootstrap\/dist\/js\/umd\//,
-      loaders: ['imports?jQuery=jquery']
+      test: /\.(woff2?|svg)$/,
+      loader: 'url?limit=10000'
+    },{
+      test: /\.(ttf|eot)$/,
+      loader: 'file'
     }]
   },
+
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules']
   },
+
   output: {
     path : path.resolve(__dirname, "build"),
     publicPath : "/public/assets/",
