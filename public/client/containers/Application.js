@@ -8,7 +8,9 @@ class Application extends React.Component {
       <div>
         <Navbar />
         <main role="main">
-          {}
+          <div className="jumbotron">
+            <div className="container">{this.props.children}</div>
+          </div>
         </main>
       </div>
     );
