@@ -7,8 +7,8 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "start:dev": "NODE_ENV=development node webpack/webpack.devserver.js --debug --colors --progress",
-    "build:test": "NODE_ENV=test node webpack/webpack.testserver.js --debug"
+    "start:dev": "NODE_ENV=development node webpack/webpack.start.dev.js",
+    "build:dev": "NODE_ENV=development node webpack/webpack.build.dev.js"
   },
   "dependencies": {
     "react": "^0.14.3",

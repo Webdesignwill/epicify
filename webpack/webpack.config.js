@@ -4,13 +4,13 @@ var webpack = require('webpack');
 
 module.exports = {
 
-  entry : {
-    app : [
-      "bootstrap-loader",
-      "./public/client/index.js",
-      "webpack-dev-server/client?http://localhost:8080"
-    ]
-  },
+  entry : [
+    "bootstrap-loader",
+    "./public/client/entry.js",
+    "webpack-dev-server/client?http://localhost:8080"
+  ],
+
+  devtool: 'inline-source-map',
 
   plugins: [
     new webpack.ProvidePlugin({

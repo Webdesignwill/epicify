@@ -12,7 +12,10 @@ var server = new WebpackDevServer(compiler, {
   publicPath : "/public/assets/",
   filename : "bundle.js",
   stats: {
-    colors : true
+    colors : true,
+    progress : true,
+    colors : true,
+    debug : true
   },
 });
 
