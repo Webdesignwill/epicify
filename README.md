@@ -21,7 +21,10 @@ $ cd npm install
 ## Running the application
 Once the application is installed, you can then run it for development with the following.
 ```sh
-$ npm run start:dev
+$ npm run dev
 ```
 ## Creating a build
-This is yet to be completed.
+If you want to make a build with all the code optimised, then hit the following.
+```sh
+$ npm run build
+```
