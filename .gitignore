@@ -1,12 +1,15 @@
 /node_modules
-/dist
 /.tmp
 /.sass-cache
 /.idea
+/dist/vendors.js
+/dist/bundle.js
 
 lib/
 *.log
 .DS_Store
-
-*-compiled.js
-*-compiled.js.map
+*.woff2
+*.svg
+*.ttf
+*.eot
+*.woff
