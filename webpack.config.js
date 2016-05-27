@@ -2,35 +2,35 @@
 var path = require('path'),
     webpack = require('webpack');
 
-var debug = process.env.NODE_ENV !== "production";
+var debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 
   entry: [
-    "bootstrap-loader",
-    path.resolve(__dirname, "app/main.js")
+    'bootstrap-loader',
+    path.resolve(__dirname, 'app/main.js')
   ],
 
-  vendors: [ "react", "react-dom", "react-router" ],
-  devtool : debug ? "inline-sourcemap" : null,
+  vendors: [ 'react', 'react-dom', 'react-router' ],
+  devtool : debug ? 'inline-sourcemap' : null,
 
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
 
   module : {
     loaders: [{
       test: /\.jsx?$/,
-      exclude: /(node_modules)/,
+      exclude: /node_modules/,
       loaders: [ 'react-hot', 'babel' ],
       noParse :[],
       include: [
-        path.resolve(__dirname, "app/")
+        path.resolve(__dirname, 'app/')
       ]
     },{
       test: /\.scss$/,
-      loaders: [ "style", "css", "autoprefixer-loader", "sass" ]
+      loaders: [ 'style', 'css', 'autoprefixer-loader', 'sass' ]
     },{
       test: /\.(woff2?|svg)$/,
       loader: 'url?limit=10000'
@@ -42,9 +42,9 @@ module.exports = {
 
   plugins: debug ? [
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" })
+    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' })
   ] : [
-    new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" }),
+    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
@@ -57,6 +57,6 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules']
+    modulesDirectories: ['node_modules', 'shared']
   }
 }
