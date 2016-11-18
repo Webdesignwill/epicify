@@ -1,62 +1,46 @@
+var path = require('path')
+var webpack = require('webpack')
 
-var path = require('path'),
-    webpack = require('webpack');
-
-var debug = process.env.NODE_ENV !== 'production';
-
-module.exports = {
+var config = {
 
   entry: [
-    'bootstrap-loader',
-    path.resolve(__dirname, 'app/main.js')
+    'react-hot-loader/patch',
+    './src/scripts/entry.js',
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:8080/'
   ],
 
-  vendors: [ 'react', 'react-dom', 'react-router' ],
-  devtool : debug ? 'inline-sourcemap' : null,
-
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: __dirname + '/public',
+    filename: 'assets/script/app.bundle.js'
   },
 
-  module : {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loaders: [ 'react-hot', 'babel' ],
-      noParse :[],
-      include: [
-        path.resolve(__dirname, 'app/')
-      ]
-    },{
-      test: /\.scss$/,
-      loaders: [ 'style', 'css', 'autoprefixer-loader', 'sass' ]
-    },{
-      test: /\.(woff2?|svg)$/,
-      loader: 'url?limit=10000'
-    },{
-      test: /\.(ttf|eot)$/,
-      loader: 'file'
-    }]
-  },
-
-  plugins: debug ? [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' })
-  ] : [
-    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      moment: "moment"
     })
   ],
 
+  module: {
+    loaders: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      query: {
+        presets: ['es2015', 'react', 'stage-0'],
+        plugins: ['babel-plugin-transform-decorators-legacy']
+      }
+    }]
+  },
+
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'shared']
+    modulesDirectories: ['node_modules']
   }
 }
+
+module.exports = config

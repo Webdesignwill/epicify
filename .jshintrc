@@ -1,0 +1,30 @@
+{
+  "jquery": true,
+  "node": true,
+  "bitwise": true,
+  "camelcase": false,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "nonew": true,
+  "esnext": true,
+  "noempty": true,
+  "undef": true,
+  "unused": false,
+  "strict": true,
+  "trailing": true,
+  "globals": {
+    "window" : true,
+    "define" : true,
+    "describe": true,
+    "it": true,
+    "process" : true,
+    "Image": true,
+    "document": false,
+    "moment": true
+  }
+}
