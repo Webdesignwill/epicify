@@ -1,6 +1,6 @@
 {
-  "name": "boiler-plate-redux",
-  "description": "Boilerplate for Redux, React ppplication",
+  "name": "Epicify",
+  "description": "Boilerplate Redux, Webpack, React ppplication",
   "main": "server.js",
   "scripts": {
     "start": "npm run compass-compile | npm run compass-watch | node server.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:couponmeteam/couponme-webapp.git"
+    "url": "git@bitbucket.org:Webdesignwill/epicify.git"
   },
   "version": "0.0.1",
   "devDependencies": {
@@ -45,7 +45,9 @@
     "node": "0.10.x"
   },
   "keywords": [
-    "Couponme"
+    "React",
+    "Boilerplate",
+    "Epicify"
   ],
   "author": "Will Falkowski",
   "dependencies": {
