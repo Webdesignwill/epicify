@@ -1,30 +1,28 @@
 
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from './../actions/users'
 
 @connect((store) => {
   return {
-    "users" : store.users.data
+    "name" : store.users.name
   }
 })
 
-export default class Index extends React.Component {
+export default class Index extends Component {
+
+  static propTypes = {
+    "name" : PropTypes.string
+  }
 
   componentDidMount() {
     this.props.dispatch(fetchUsers())
   }
 
   render () {
-
-    const { users } = this.props
-    const mappedUsers = this.props.users.map(user => <li key={ user.id }>{ user.name }</li>)
-
     return (
       <div>
-        <ul>
-          { mappedUsers }
-        </ul>
+        <p>{this.props.name}</p>
       </div>
     )
   }

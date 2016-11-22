@@ -1,5 +1,6 @@
 
 const defaultState = {
+  "name" : "William",
   "fetching" : false,
   "fetched" : false,
   "data" : [],
