@@ -23,3 +23,6 @@ Once the application is installed, you can then run it for development with the 
 ```sh
 $ npm run start
 ```
+
+## Dummy API
+Requests are made to JSON server : https://github.com/typicode/json-server

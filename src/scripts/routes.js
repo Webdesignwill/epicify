@@ -4,8 +4,8 @@ import React from 'react'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 
-import Application from './containers/Application.js'
 import Index from './pages/Index.js'
+import Application from './Application.js'
 import NoMatch from './pages/404.js'
 
 import store from './store'

@@ -1,29 +1,27 @@
 
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from './../actions/users'
+import { fetchPosts } from './../actions/posts'
+
+import Post from '../components/Post'
 
 @connect((store) => {
   return {
-    "name" : store.users.name
+    "posts" : store.posts.data
   }
 })
 
 export default class Index extends Component {
 
-  static propTypes = {
-    "name" : PropTypes.string
-  }
-
   componentDidMount() {
-    this.props.dispatch(fetchUsers())
+    this.props.dispatch(fetchPosts())
   }
 
   render () {
     return (
-      <div>
-        <p>{this.props.name}</p>
-      </div>
+      <div>{this.props.posts.map(post =>
+        <Post key={post.id} body={post.body} id={post.id} title={post.title} userid={post.userId} />
+      )}</div>
     )
   }
 }
