@@ -11,33 +11,29 @@ const defaultState = {
 const postReducer = function (state = defaultState, action) {
 
   switch (action.type) {
-    case "FETCH_POST_PENDING" : {
-      state = {
+    case "FETCH_POST_PENDING" :
+      return {
         ...state,
         "updating" : true
       }
-      break;
-    }
-    case "FETCH_POST_REJECTED" : {
-      state = {
+
+    case "FETCH_POST_REJECTED" :
+      return {
         ...state,
         "updating" : false,
         "error" : action.payload
       }
-      break;
-    }
-    case "FETCH_POST_FULFILLED" : {
-      state = {
+
+    case "FETCH_POST_FULFILLED" :
+      return {
         ...state,
         ...action.payload.data,
         "updating" : false,
         "updated" : true
       }
-      break;
-    }
-  }
 
-  return state
+    default: return state;
+  }
 }
 
 export default postReducer
