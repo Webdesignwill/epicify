@@ -9,3 +9,12 @@ export function fetchPosts () {
     })
   }
 }
+
+export function fetchPost (id) {
+  return function (dispatch) {
+    dispatch({
+      type: "FETCH_POST",
+      payload: axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    })
+  }
+}

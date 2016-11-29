@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 
 import Index from './pages/Index.js'
 import Application from './Application.js'
+import Post from './pages/Post.js'
 import NoMatch from './pages/404.js'
 
 import store from './store'
@@ -15,6 +16,9 @@ const Routes =
     <Router history={ hashHistory }>
       <Route path="/" component={ Application }>
         <IndexRoute component={ Index } />
+
+        <Route path="/posts/:id" component={ Post } />
+
         <Route path="*" component={ NoMatch }/>
       </Route>
     </Router>

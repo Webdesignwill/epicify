@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from './../actions/posts'
 
-import Post from '../components/Post'
+import PostItem from '../components/PostItem'
 
 @connect((store) => {
   return {
@@ -13,15 +13,18 @@ import Post from '../components/Post'
 
 export default class Index extends Component {
 
+  static propTypes = {}
+
   componentDidMount() {
     this.props.dispatch(fetchPosts())
   }
 
   render () {
     return (
-      <div>{this.props.posts.map(post =>
-        <Post key={post.id} body={post.body} id={post.id} title={post.title} userid={post.userId} />
-      )}</div>
+      <div className="col-sm-6 col-sm-offset-3">{this.props.posts.map(post =>
+        <PostItem key={post.id} body={post.body} id={post.id} title={post.title} userid={post.userId} />
+      )}
+      </div>
     )
   }
 }
