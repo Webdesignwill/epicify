@@ -8,7 +8,7 @@ const defaultState = {
   "updated": false
 }
 
-const postReducer = function (state = defaultState, action) {
+const post = function (state = defaultState, action) {
 
   switch (action.type) {
     case "FETCH_POST_PENDING" :
@@ -36,4 +36,4 @@ const postReducer = function (state = defaultState, action) {
   }
 }
 
-export default postReducer
+export default post

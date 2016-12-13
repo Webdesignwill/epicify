@@ -6,7 +6,7 @@ const defaultState = {
   "error": null
 }
 
-const postsReducer = function (state = defaultState, action) {
+const posts = function (state = defaultState, action) {
 
   switch (action.type) {
     case "FETCH_POSTS_PENDING" :
@@ -14,7 +14,7 @@ const postsReducer = function (state = defaultState, action) {
         ...state,
         "fetching" : true
       }
-      
+
     case "FETCH_POSTS_REJECTED" :
       return {
         ...state,
@@ -34,4 +34,4 @@ const postsReducer = function (state = defaultState, action) {
   }
 }
 
-export default postsReducer
+export default posts

@@ -39,7 +39,8 @@ var config = {
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules']
+    modulesDirectories: ['node_modules'],
+    root: __dirname + '/src/scripts/'
   }
 }
 

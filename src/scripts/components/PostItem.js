@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
-export default class Posts extends Component {
+export default class PostItem extends Component {
 
   static propTypes = {
     "title": PropTypes.string,
@@ -11,8 +11,8 @@ export default class Posts extends Component {
 
   render () {
     return (
-      <div>
-        <h3><Link to={`/posts/${this.props.id}`}>{this.props.title}</Link></h3>
+      <div className="list-group-item">
+        <Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
       </div>
     )
   }

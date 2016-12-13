@@ -1,4 +1,3 @@
-
 import { render } from 'react-dom'
 
 import Routes from './routes.js'
