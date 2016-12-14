@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
@@ -6,7 +5,9 @@ import { Provider } from 'react-redux'
 
 import Application from './components/Application'
 import Posts from './containers/blog/Posts'
-import Dashboard from './containers/Dashboard'
+import Dashboard from './containers/dashboard/Dashboard'
+import Customers from './containers/dashboard/Customers'
+import Campaigns from './containers/dashboard/Campaigns'
 import Post from './containers/blog/Post'
 import NoMatch from './pages/404'
 
@@ -19,7 +20,7 @@ const Routes =
         <IndexRoute component={ Dashboard } />
 
         <Route path="/dashboard" component={ Dashboard }>
-
+          <Route path="/customers/:id" component={ Campaigns }></Route>
         </Route>
 
         <Route path="/post/:id" component={ Post }></Route>

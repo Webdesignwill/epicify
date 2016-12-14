@@ -13,10 +13,12 @@ export default class Posts extends Component {
 
   render () {
     return (
-      <div className="list-group">{this.props.posts.map(post =>
-        <PostItem key={post.id} body={post.body} id={post.id} title={post.title} userid={post.userId} />
-      )}
-      </div>
+      <main role="main">
+        <div className="list-group">{this.props.posts.map(post =>
+          <PostItem key={post.id} body={post.body} id={post.id} title={post.title} userid={post.userId} />
+        )}
+        </div>
+      </main>
     )
   }
 }

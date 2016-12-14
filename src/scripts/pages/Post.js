@@ -16,7 +16,7 @@ export default class Post extends Component {
 
   render () {
     return (
-      <div>
+      <main role="main">
         <div className="list-group col-sm-2">
           <a href="/" className="list-group-item text-danger">
             Edit post
@@ -28,7 +28,7 @@ export default class Post extends Component {
           <cite>Published by user { this.props.userId }</cite>
           <p>{ this.props.body }</p>
         </div>
-      </div>
+      </main>
     )
   }
 }

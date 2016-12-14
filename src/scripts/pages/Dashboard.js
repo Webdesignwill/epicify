@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { fetchData } from '../actions/dashboard'
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../containers/Sidebar'
 
 export default class Dashboard extends Component {
 
@@ -13,7 +13,10 @@ export default class Dashboard extends Component {
   render () {
     return (
       <div>
-        <Sidebar customers={this.props.customers} />
+        <Sidebar />
+        <main role="main" className="table-container">
+          {this.props.children}
+        </main>
       </div>
     )
   }
