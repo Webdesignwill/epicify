@@ -4,7 +4,7 @@ const defaultState = {
   "updated": false
 }
 
-const dashboard = function (state = defaultState, action) {
+const customers = function (state = defaultState, action) {
   switch (action.type) {
     case "FETCH_DATA_PENDING" :
       return {
@@ -22,13 +22,13 @@ const dashboard = function (state = defaultState, action) {
     case "FETCH_DATA_FULFILLED" :
       return {
         ...state,
-        ...action.payload.data.data,
-        "updating" : false,
-        "updated" : true
+        data: action.payload.data.data.customers,
+        updating : false,
+        updated : true
       }
 
     default: return state;
   }
 }
 
-export default dashboard
+export default customers

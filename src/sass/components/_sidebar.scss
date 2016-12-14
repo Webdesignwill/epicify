@@ -16,10 +16,24 @@
     color: black;
   }
 
-  .lead {
-    margin-bottom: 5px;
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+
+  .list-group-item {
+    padding: 0;
     position: relative;
+  }
+
+  .lead {
+    margin-bottom: 0;
+    padding: 10px 0px 10px 15px;
     color: slategray;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 85%;
+    white-space: nowrap;
 
     &.select {
       cursor: pointer;
@@ -31,9 +45,9 @@
 
     .fa {
       font-size: 12px;
-      position:absolute;
-      right:0;
-      top:12px;
+      position: absolute;
+      right: 20px;
+      top: 40%;
     }
   }
 

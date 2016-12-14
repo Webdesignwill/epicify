@@ -6,8 +6,7 @@ import { Provider } from 'react-redux'
 import Application from './components/Application'
 import Posts from './containers/blog/Posts'
 import Dashboard from './containers/dashboard/Dashboard'
-import Customers from './containers/dashboard/Customers'
-import Campaigns from './containers/dashboard/Campaigns'
+import Customer from './containers/dashboard/Customer'
 import Post from './containers/blog/Post'
 import NoMatch from './pages/404'
 
@@ -19,8 +18,8 @@ const Routes =
       <Route path="/" component={ Application }>
         <IndexRoute component={ Dashboard } />
 
-        <Route path="/dashboard" component={ Dashboard }>
-          <Route path="/customers/:id" component={ Campaigns }></Route>
+        <Route path="/" component={ Dashboard }>
+          <Route path="/customer/(:id)" component={ Customer }></Route>
         </Route>
 
         <Route path="/post/:id" component={ Post }></Route>

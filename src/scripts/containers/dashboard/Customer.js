@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Dashboard from '../../pages/Dashboard';
+import Customer from '../../components/dashboard/Customer';
 
 function mapStateToProps(store) {
   return {
@@ -7,4 +7,4 @@ function mapStateToProps(store) {
   };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(Customer);

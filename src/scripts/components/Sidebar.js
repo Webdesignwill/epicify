@@ -9,16 +9,13 @@ export default class Sidebar extends Component {
     return (
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h3>Customers</h3>
-          <p>Please select the customers you would like to display information from</p>
+          <h3>Campaigns</h3>
+          <p>Please select the campaigns you would like to display information from</p>
         </div>
         <div className="list-group">
-          {this.props.customers ? this.props.customers.map(customer =>
-            <div className="list-group-item" key={customer.id}>
-              <p className="lead select">{customer.meta.name} <i className="fa fa-plus" aria-hidden="true"></i></p>
-              <Link to={`customers/${customer.id}`}>
-                Campaigns <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </Link>
+          {this.props.campaigns ? this.props.campaigns.map(campaign =>
+            <div className="list-group-item" key={campaign.id}>
+              <p className="lead select">{campaign.meta.name} <i className="fa fa-plus" aria-hidden="true"></i></p>
             </div>
           ) : null}
         </div>

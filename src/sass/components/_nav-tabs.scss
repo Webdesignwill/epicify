@@ -1,0 +1,11 @@
+
+.nav-tabs {
+  li {
+    a {
+      color: white;
+      &:hover, &:focus, &.active {
+        color: black;
+      }
+    }
+  }
+}

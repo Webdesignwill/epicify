@@ -1,10 +1,21 @@
-import { connect } from 'react-redux';
-import Sidebar from '../components/Sidebar';
+import { connect } from 'react-redux'
+import Sidebar from '../components/Sidebar'
 
-function mapStateToProps(store) {
+function mapStateToProps(store, query) {
+
+  let campaigns = [];
+
+  if(!!store.customers.data) {
+    store.customers.data.map((customer) => {
+      if(parseInt(query.params.id) === customer.id) {
+        campaigns = customer.campaigns
+      }
+    })
+  }
+
   return {
-    customers: store.dashboard.customers
-  };
+    campaigns
+  }
 }
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps)(Sidebar)
