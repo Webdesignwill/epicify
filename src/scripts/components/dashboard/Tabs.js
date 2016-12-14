@@ -6,7 +6,6 @@ export default class Tabs extends Component {
   static propTypes = {}
 
   render () {
-    console.log(this.props)
     return (
       <ul className="nav nav-tabs">
         {this.props.customers ? this.props.customers.map(customer =>

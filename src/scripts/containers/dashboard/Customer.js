@@ -1,10 +1,21 @@
 import { connect } from 'react-redux';
 import Customer from '../../components/dashboard/Customer';
 
-function mapStateToProps(store) {
+function mapStateToProps(store, query) {
+
+  let campaigns = [];
+
+  if(!!store.customers.data) {
+    store.customers.data.map((customer) => {
+      if(parseInt(query.params.id) === customer.id) {
+        campaigns = customer.campaigns
+      }
+    })
+  }
+
   return {
-    customers: store.customers.data
-  };
+    campaigns
+  }
 }
 
 export default connect(mapStateToProps)(Customer);

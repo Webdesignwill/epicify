@@ -6,7 +6,11 @@ export default class Customer extends Component {
 
   render () {
     return (
-      <div>{this.props.params.id}</div>
+      <div>{this.props.campaigns ? this.props.campaigns.map(campaign =>
+        <p key={campaign.id}>
+          {campaign.meta.name}
+        </p>
+      ) : null}</div>
     )
   }
 }

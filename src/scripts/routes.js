@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 import Application from './components/Application'
 import Posts from './containers/blog/Posts'
@@ -12,9 +13,11 @@ import NoMatch from './pages/404'
 
 import store from './store'
 
+const history = syncHistoryWithStore(hashHistory, store)
+
 const Routes =
   <Provider store={ store }>
-    <Router history={ hashHistory }>
+    <Router history={ history }>
       <Route path="/" component={ Application }>
         <IndexRoute component={ Dashboard } />
 
