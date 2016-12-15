@@ -8,6 +8,7 @@ import Application from './components/Application'
 import Posts from './containers/blog/Posts'
 import Dashboard from './containers/dashboard/Dashboard'
 import Customer from './containers/dashboard/Customer'
+import Campaign from './containers/dashboard/Campaign'
 import Post from './containers/blog/Post'
 import NoMatch from './pages/404'
 
@@ -22,7 +23,9 @@ const Routes =
         <IndexRoute component={ Dashboard } />
 
         <Route path="/" component={ Dashboard }>
-          <Route path="/customer/(:id)" component={ Customer }></Route>
+          <Route path="/customer/(:customerid)" component={ Customer }>
+            <Route path="/customer/(:customerid)/campaign/:campaignid" component={ Campaign } />
+          </Route>
         </Route>
 
         <Route path="/post/:id" component={ Post }></Route>

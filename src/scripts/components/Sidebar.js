@@ -6,6 +6,7 @@ export default class Sidebar extends Component {
   static propTypes = {}
 
   render () {
+    console.log('SIDEBAR PROPS : ', this.props)
     return (
       <aside className="sidebar">
         <div className="sidebar-header">
@@ -15,7 +16,9 @@ export default class Sidebar extends Component {
         <div className="list-group">
           {this.props.campaigns ? this.props.campaigns.map(campaign =>
             <div className="list-group-item" key={campaign.id}>
-              <p className="lead select">{campaign.meta.name} <i className="fa fa-plus" aria-hidden="true"></i></p>
+              <Link to={`/customer/${this.props.params.customerid}/campaign/${campaign.id}`}>
+                <p className="lead select">{campaign.meta.name} <i className="fa fa-plus" aria-hidden="true"></i></p>
+              </Link>
             </div>
           ) : null}
         </div>

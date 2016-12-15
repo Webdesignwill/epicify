@@ -7,7 +7,7 @@ function mapStateToProps(store, query) {
 
   if(!!store.customers.data) {
     store.customers.data.map((customer) => {
-      if(parseInt(query.params.id) === customer.id) {
+      if(parseInt(query.params.customerid) === customer.id) {
         campaigns = customer.campaigns
       }
     })
