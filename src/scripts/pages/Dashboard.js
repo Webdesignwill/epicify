@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
   render () {
     return (
       <div>
-        <Sidebar params={this.props.params} />
+        <Sidebar params={this.props.params} campaignids={this.props.location.query.campaignid}/>
         <main role="main" className="table-container">
           <Tabs params={this.props.params} />
           {this.props.children}

@@ -4,13 +4,13 @@ export default class Customer extends Component {
 
   static propTypes = {}
 
+  /* For Customer, we want to display all the customer tables n stuff, everything */
+
   render () {
     return (
-      <div>{this.props.campaigns ? this.props.campaigns.map(campaign =>
-        <p key={campaign.id}>
-          {campaign.meta.name}
-        </p>
-      ) : null}</div>
+      <div>
+        {this.props.children}
+      </div>
     )
   }
 }

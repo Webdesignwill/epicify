@@ -3,6 +3,8 @@ var webpack = require('webpack')
 
 var config = {
 
+  devtool: 'source-map',
+
   entry: [
     'react-hot-loader/patch',
     './src/scripts/entry.js',

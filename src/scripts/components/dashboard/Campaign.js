@@ -4,8 +4,14 @@ export default class Campaign extends Component {
 
   static propTypes = {}
 
+  /* For campaign, we want to display only the selected campaign */
+
   render () {
-    console.log('MY PROPS : ', this.props)
+    // if(!this.props.params.campaignid) {
+    //   console.log('Dispaly all campaings')
+    // } else {
+    //   console.log('Display selected')
+    // }
     return (
       <div>Campaign</div>
     )

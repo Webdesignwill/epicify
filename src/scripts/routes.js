@@ -22,9 +22,9 @@ const Routes =
       <Route path="/" component={ Application }>
         <IndexRoute component={ Dashboard } />
 
-        <Route path="/" component={ Dashboard }>
-          <Route path="/customer/(:customerid)" component={ Customer }>
-            <Route path="/customer/(:customerid)/campaign/:campaignid" component={ Campaign } />
+        <Route component={ Dashboard }>
+          <Route path="customer/(:customerid)" component={ Campaign } >
+            <Route path="campaign/:campaignid" />
           </Route>
         </Route>
 
