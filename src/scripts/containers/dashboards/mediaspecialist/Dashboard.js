@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Dashboard from '../../pages/Dashboard';
+import Dashboard from '../../../pages/Mediaspecialist';
 
 function mapStateToProps(store, ownProps) {
   return {};

@@ -1,0 +1,25 @@
+
+.table {
+
+  margin-bottom:15px;
+
+  .table-head {
+    border: 1px solid slategray;
+    border-bottom: 0;
+  }
+
+  .table-head-row {
+    padding: 8px;
+  }
+
+  .table-body {
+    border: 1px solid slategray;
+  }
+
+  .table-row {
+    padding: 8px;
+    color: slategray;
+  }
+
+  .table-cell {}
+}

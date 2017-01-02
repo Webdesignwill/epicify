@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Campaign from '../../components/dashboard/Campaign';
+import Campaign from '../../../dashboards/mediaspecialist/Campaign';
 
 function mapStateToProps(store, props) {
 

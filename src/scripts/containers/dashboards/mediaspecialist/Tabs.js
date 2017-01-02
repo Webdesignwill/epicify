@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Tabs from '../../components/dashboard/Tabs';
+import Tabs from '../../../dashboards/mediaspecialist/Tabs';
 
 function mapStateToProps(store, query) {
   return {

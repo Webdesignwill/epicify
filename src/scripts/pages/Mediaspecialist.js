@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import { fetchData } from '../actions/dashboard'
+import { fetchData } from '../actions/dashboards/mediaspecialist'
 import Sidebar from '../containers/Sidebar'
-import Tabs from '../containers/dashboard/Tabs'
+import Tabs from '../containers/dashboards/mediaspecialist/Tabs'
 
-export default class Dashboard extends Component {
+export default class Mediaspecialist extends Component {
 
   static propTypes = {}
 
