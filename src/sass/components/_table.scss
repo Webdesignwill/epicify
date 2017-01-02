@@ -4,7 +4,7 @@
   margin-bottom:15px;
 
   .table-head {
-    border: 1px solid slategray;
+    border: 1px solid #ddd;
     border-bottom: 0;
   }
 
@@ -13,12 +13,19 @@
   }
 
   .table-body {
-    border: 1px solid slategray;
+    border: 1px solid #ddd;
+    border-bottom: 0;
   }
 
   .table-row {
-    padding: 8px;
-    color: slategray;
+    .table-row-header {
+      padding: 10px 0 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .table-row-body {
+      color: slategray;
+      border-bottom: 1px solid #ddd;
+    }
   }
 
   .table-cell {}
