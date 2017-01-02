@@ -21,7 +21,7 @@
   }
 
   .list-group-item {
-    padding: 0; 
+    padding: 0;
     position: relative;
     border-radius: 0;
     &:last-child, &:first-child {
@@ -32,7 +32,7 @@
   .lead {
     margin-bottom: 0;
     padding: 10px 0px 10px 15px;
-    color: slategray;
+    color: #337ab7;
     font-size: 18px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -43,7 +43,7 @@
       cursor: pointer;
 
       &:hover, &:focus {
-        color: darken(slategray, 15%);
+        color: darken(#337ab7, 15%);
       }
     }
 
