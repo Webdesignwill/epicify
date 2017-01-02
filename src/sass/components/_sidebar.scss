@@ -21,8 +21,12 @@
   }
 
   .list-group-item {
-    padding: 0;
+    padding: 0; 
     position: relative;
+    border-radius: 0;
+    &:last-child, &:first-child {
+      border-radius: 0;
+    }
   }
 
   .lead {

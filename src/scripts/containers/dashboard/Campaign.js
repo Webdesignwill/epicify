@@ -18,14 +18,14 @@ function mapStateToProps(store, props) {
           return campaign
         }
       })
-    }
-
-    if(typeof props.location.query.campaignid === 'object') {
+    } else if (typeof props.location.query.campaignid === 'object') {
       campaigns = customer.campaigns.filter((campaign) => {
         if(props.location.query.campaignid.indexOf(campaign.id.toString()) > -1) {
           return campaign
         }
       })
+    } else {
+      campaigns = customer.campaigns
     }
   }
 
