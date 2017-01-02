@@ -9,9 +9,6 @@ export default class LineItems extends Component {
   static propTypes = {}
 
   render () {
-
-    console.log(this.props.lineitems)
-
     return (
       <div className="table-body line-items">
         {this.props.lineitems.length ? this.props.lineitems.map(lineitem =>
@@ -28,8 +25,6 @@ export default class LineItems extends Component {
                 <Percentage percentage={lineitem.data.to_date.pacing.actual} />
                 <Percentage percentage={lineitem.data.yesterday.pacing.actual} />
                 <Currency amount={lineitem.data.to_date.budget.remaining.network.per_day} showcents="true" />
-                <ActionsRevenue actions={lineitem.data.to_date.goals[lineitem.config.primary_goal.id].data.actions} />
-                <Currency amount={lineitem.data.to_date.goals[lineitem.config.primary_goal.id].data.network_cpa.expected} />
               </div>
             </div>
           </div>
