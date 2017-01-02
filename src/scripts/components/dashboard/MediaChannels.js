@@ -7,12 +7,24 @@ export default class MediaChannels extends Component {
 
   render () {
     return (
-      <div>
+      <div className="media-channels">
         {this.props.mediachannels.length ? this.props.mediachannels.map(mediachannel =>
           <table key={mediachannel.id} className="table table-bordered">
             <thead>
               <tr>
-                <th>{mediachannel.meta.name}</th>
+                <th>
+                  <span className="media-channel-header m__r">
+                    {mediachannel.meta.name}
+                  </span>
+                  <span className="expand-data text-normal m__r">
+                    € {mediachannel.config.budget.network}
+                    <i className="fa fa-caret-down m__l" aria-hidden="true"></i>
+                  </span>
+                  <span className="expand-data text-normal">
+                    € {mediachannel.config.budget.total}
+                    <i className="fa fa-caret-down m__l" aria-hidden="true"></i>
+                  </span>
+                </th>
               </tr>
             </thead>
             <LineItems lineitems={mediachannel.line_items} />
