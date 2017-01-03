@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-export default class ActionsRevenue extends Component {
+export default class NetworkCPA extends Component {
 
   static propTypes = {}
 
@@ -11,13 +11,11 @@ export default class ActionsRevenue extends Component {
     }
 
     const goal = this.props.goals[this.props.primarygoalid]
-    const actual = Math.round(goal.data && goal.data.actions.actual || null)
-    const target = Math.round(goal.data && goal.data.actions.target || null)
+    const actual = Math.round(goal.data.network_cpa && goal.data.network_cpa.actual || null)
 
     return (
       <div className="content">
-        <div>{actual}</div>
-        <div className="text-size-sm text-muted">( {target} )</div>
+        {actual}
       </div>
     )
   }

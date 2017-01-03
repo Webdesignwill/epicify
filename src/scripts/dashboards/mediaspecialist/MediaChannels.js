@@ -7,10 +7,10 @@ export default class MediaChannels extends Component {
 
   render () {
     return (
-      <div className="table media-channels">
+      <div className="media-channels row">
         {this.props.mediachannels.length ? this.props.mediachannels.map(mediachannel =>
-          <div className="media-channel" key={mediachannel.id}>
-            <h4>{mediachannel.meta.name}</h4>
+          <div className="media-channel col-sm-12" key={mediachannel.id}>
+            <h4 className="col-sm-12">{mediachannel.meta.name}</h4>
             <LineItems lineitems={mediachannel.line_items} />
           </div>
         ) : null}

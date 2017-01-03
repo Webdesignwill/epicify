@@ -13,7 +13,7 @@ export default class Mediaspecialist extends Component {
 
   render () {
     return (
-      <div>
+      <div className="container">
         <Sidebar params={this.props.params} campaignids={this.props.location.query.campaignid}/>
         <main role="main" className="table-container">
           <Tabs params={this.props.params} />

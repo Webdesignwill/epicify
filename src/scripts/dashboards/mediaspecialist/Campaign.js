@@ -7,11 +7,10 @@ export default class Campaign extends Component {
 
   render () {
     return (
-      <div className="campaign-list">
+      <div className="row campaign-list">
         {this.props.campaigns.length ? this.props.campaigns.map(campaign =>
-          <div key={campaign.id}>
+          <div className="col-sm-12" key={campaign.id}>
             <p className="lead">{campaign.meta.name}</p>
-
             <MediaChannels mediachannels={campaign.media_channels} />
           </div>
         ) : null}
