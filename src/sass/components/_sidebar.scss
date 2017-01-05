@@ -38,9 +38,23 @@
     }
   }
 
+  .media-channel-list {
+    padding-left:20px;
+    list-style: none;
+    li {
+      font-size:1.1rem;
+      padding-right:17px;
+      margin-bottom: 3px;
+      .line-items-count {
+        color: darkgrey;
+        font-weight:normal;
+      }
+    }
+  }
+
   .lead {
     margin-bottom: 0;
-    padding: 10px 0px 10px 15px;
+    padding: 10px 0px 10px 35px;
     color: #337ab7;
     font-size: 1.4rem;
     text-overflow: ellipsis;
@@ -57,9 +71,8 @@
     }
 
     .fa {
-      font-size: 8px;
       position: absolute;
-      right: 20px;
+      left: 15px;
       top: 41%;
     }
   }
@@ -73,6 +86,10 @@
       right:0;
       top:5px;
     }
+  }
+
+  .go-right {
+    right:20px;
   }
 }
 

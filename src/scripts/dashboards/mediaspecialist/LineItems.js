@@ -13,9 +13,9 @@ export default class LineItems extends Component {
 
   render () {
     return (
-      <div className="line-items">
+      <div className="line-items clearfix">
         {this.props.lineitems.length ? this.props.lineitems.map(lineitem =>
-          <div className="line-items-wrapper clearfix" key={lineitem.id}>
+          <div className="line-items-wrapper" key={lineitem.id}>
             <div className="col-sm-12 line-item-header">
               {lineitem.meta.name}
             </div>

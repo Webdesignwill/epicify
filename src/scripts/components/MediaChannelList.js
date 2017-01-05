@@ -6,14 +6,16 @@ export default class MediaChannelList extends Component {
   static propTypes = {}
 
   render () {
+    console.log(this.props.mediachannels)
     return (
-      <div>
+      <ul className="media-channel-list">
         {this.props.mediachannels ? this.props.mediachannels.map(mediachannel =>
-          <ul key={mediachannel.id}>
-            <li><a href="#">{mediachannel.meta.name}</a></li>
-          </ul>
+          <li key={mediachannel.id} className="clearfix">
+            <a href="#" className="pull-left">{mediachannel.meta.name}</a>
+            <span className="pull-right line-items-count">({mediachannel.line_items.length})</span>
+          </li>
         ) : null}
-      </div>
+      </ul>
     )
   }
 }

@@ -51,12 +51,20 @@ export default class Sidebar extends Component {
   render () {
     return (
       <aside className="sidebar">
+        <div className="sidebar-header">Customers</div>
+        <div className="list-group">
+          <div className={`list-group-item`}>
+            <a href="#">
+              <p className="lead select">Vodaphone <i className="fa fa-caret-down go-right" aria-hidden="true"></i></p>
+            </a>
+          </div>
+        </div>
         <div className="sidebar-header">Campaigns</div>
         <div className="list-group">
           {this.props.campaigns ? this.props.campaigns.map(campaign =>
             <div className={`list-group-item ${this.toggleClass(campaign.id, '', 'expanded')}`} key={campaign.id}>
               <Link name={campaign.id} to={{ pathname: `/customer/${this.props.params.customerid}`, query: { campaignid: this.makeUrl(campaign.id) }}}>
-                <p className="lead select">{campaign.meta.name} <i className={`fa fa-${this.toggleClass(campaign.id, 'plus', 'minus')}`} aria-hidden="true"></i></p>
+                <p className="lead select"><i className={`fa fa-${this.toggleClass(campaign.id, 'square-o', 'check-square-o')}`} aria-hidden="true"></i> {campaign.meta.name}</p>
               </Link>
               <MediaChannelList mediachannels={campaign.media_channels} />
             </div>

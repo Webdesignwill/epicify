@@ -13,7 +13,7 @@ export default class TargetActual extends Component {
     return (
       <div className="content">
         <div>€ {actual}</div>
-        <div className="text-size-sm text-muted">( € {target} )</div>
+        <div className="text-size-sm">( € {target} )</div>
       </div>
     )
   }

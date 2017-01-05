@@ -2,15 +2,27 @@
 .line-items {
   .line-items-wrapper {
     padding: 0 15px;
+    position:relative;
+    display:inline-block;
+    width:100%;
+    margin-bottom: 10px;
   }
   .line-item-header {
-    padding: 16px 0 16px 0;
+    padding: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    background: white;
+    z-index: 2000;
+    left: 22px;
+    top: -8px;
+    width: auto;
   }
   .line-item-row {
     padding: 0;
     border: 1px solid #ddd;
     border-left: 0;
     height:60px;
+    color: #777;
 
     .line-item {
       border-left:1px solid #ddd;
