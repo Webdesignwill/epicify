@@ -1,0 +1,23 @@
+
+.nav-tabs {
+  background-color: #efefef;
+  li {
+    border-radius: 0;
+
+    &:first-child {
+      &.active, &:hover, &:focus {
+        border-left:0;
+        a {
+          border-left:0;
+        }
+      }
+    }
+
+    &.active, &:hover, &:focus {
+      border-radius: 0;
+      a {
+        border-radius: 0;
+      }
+    }
+  }
+}

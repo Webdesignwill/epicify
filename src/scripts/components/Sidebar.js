@@ -50,10 +50,7 @@ export default class Sidebar extends Component {
   render () {
     return (
       <aside className="sidebar">
-        <div className="sidebar-header">
-          <h3>Campaigns</h3>
-          <p>Please select the campaigns you would like to display information from</p>
-        </div>
+        <div className="sidebar-header"></div>
         <div className="list-group">
           {this.props.campaigns ? this.props.campaigns.map(campaign =>
             <div className="list-group-item" key={campaign.id}>

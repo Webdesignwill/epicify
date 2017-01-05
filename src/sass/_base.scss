@@ -10,17 +10,16 @@ body, html {
 
 body {
   font-family: $openSans;
-  padding:10px 0;
+  padding:0;
 }
 
 .table-container {
   position:relative;
-  padding-left:265px;
-  padding-top: 65px;
+  padding-left: $mainPaddingOffsetLeft;
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0;
   width: 100%;
   margin: 0;
 }
