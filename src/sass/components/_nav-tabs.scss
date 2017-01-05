@@ -1,22 +1,40 @@
 
 .nav-tabs {
-  background-color: #efefef;
+  background-color: #337ab7;
   li {
     border-radius: 0;
 
+    a {
+      color: white;
+    }
+
     &:first-child {
       &.active, &:hover, &:focus {
-        border-left:0;
+        border-left-color:white;
         a {
-          border-left:0;
+          border-left-color:white;
         }
       }
     }
 
-    &.active, &:hover, &:focus {
+    &:hover, &:focus {
+      border-color: darken(#337ab7, 10%);
+      border-bottom-color: #ddd;
       border-radius: 0;
       a {
         border-radius: 0;
+        border-color: darken(#337ab7, 10%);
+        border-bottom-color: #ddd;
+        background-color: darken(#337ab7, 10%);
+      }
+    }
+
+    &.active {
+      border-radius: 0;
+      border-top-color:white;
+      a {
+        border-radius: 0;
+        border-top-color:white;
       }
     }
   }

@@ -1,7 +1,7 @@
 
 .sidebar {
   @include transition(width, 0.2s, ease-out);
-  background-color: white;
+  background-color: #eee;
   position: fixed;
   left: $applicationSidebarWidth;
   width: $sidebarWidth;
@@ -12,10 +12,10 @@
   border-right:1px solid #ddd;
 
   .sidebar-header {
-    padding: 0 15px;
+    padding: 11px 0 0 15px;
     margin-bottom:20px;
     color: black;
-    height: 31px;
+    height: 21px;
   }
 
   a:hover, a:focus {
@@ -23,12 +23,18 @@
   }
 
   .list-group-item {
+    max-height: 40px;
+    overflow:hidden;
     padding: 0;
     position: relative;
     border-radius: 0;
     border-right:0;
     &:last-child, &:first-child {
       border-radius: 0;
+    }
+
+    &.expanded {
+      max-height: 2000px;
     }
   }
 
@@ -51,10 +57,10 @@
     }
 
     .fa {
-      font-size: 12px;
+      font-size: 8px;
       position: absolute;
       right: 20px;
-      top: 40%;
+      top: 41%;
     }
   }
 

@@ -17,7 +17,7 @@ export default class LineItems extends Component {
         {this.props.lineitems.length ? this.props.lineitems.map(lineitem =>
           <div className="line-items-wrapper clearfix" key={lineitem.id}>
             <div className="col-sm-12 line-item-header">
-              {lineitem.meta.name} <span className="pull-right">{lineitem.media_plan.meta.name}</span>
+              {lineitem.meta.name}
             </div>
             <div className="col-sm-12 line-item-row">
               <div className="col-sm-1 line-item">

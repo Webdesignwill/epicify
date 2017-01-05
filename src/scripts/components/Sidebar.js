@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import MediaChannelList from './MediaChannelList'
 
 export default class Sidebar extends Component {
 
@@ -38,25 +39,26 @@ export default class Sidebar extends Component {
     }
   }
 
-  toggleClass (id) {
+  toggleClass (id, first, second) {
 
     if(!this.props.campaignids || this.props.campaignids.indexOf(id.toString()) === -1) {
-      return "fa fa-plus"
+      return first
     }
 
-    return "fa fa-minus"
+    return second
   }
 
   render () {
     return (
       <aside className="sidebar">
-        <div className="sidebar-header"></div>
+        <div className="sidebar-header">Campaigns</div>
         <div className="list-group">
           {this.props.campaigns ? this.props.campaigns.map(campaign =>
-            <div className="list-group-item" key={campaign.id}>
+            <div className={`list-group-item ${this.toggleClass(campaign.id, '', 'expanded')}`} key={campaign.id}>
               <Link name={campaign.id} to={{ pathname: `/customer/${this.props.params.customerid}`, query: { campaignid: this.makeUrl(campaign.id) }}}>
-                <p className="lead select">{campaign.meta.name} <i className={this.toggleClass(campaign.id)} aria-hidden="true"></i></p>
+                <p className="lead select">{campaign.meta.name} <i className={`fa fa-${this.toggleClass(campaign.id, 'plus', 'minus')}`} aria-hidden="true"></i></p>
               </Link>
+              <MediaChannelList mediachannels={campaign.media_channels} />
             </div>
           ) : null}
         </div>

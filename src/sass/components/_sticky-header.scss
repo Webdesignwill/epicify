@@ -1,5 +1,16 @@
 
-.line-items {
+.sticky-header {
+  padding: 0 15px;
+  background-color:white;
+
+  &.attached {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 310px;
+    z-index: 1000;
+  }
+
   .line-items-wrapper {
     padding: 0 15px;
   }
@@ -10,14 +21,14 @@
     padding: 0;
     border: 1px solid #ddd;
     border-left: 0;
-    height:60px;
+    height:40px;
 
     .line-item {
       border-left:1px solid #ddd;
       text-align: center;
-      padding: 0;
+      padding: 0 12px;
       height: 100%;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
 
       .content {
         height:100%;
