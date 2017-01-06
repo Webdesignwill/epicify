@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { fetchData } from '../actions/dashboards/mediaspecialist'
 import Sidebar from '../containers/Sidebar'
-import ApplicationHeader from '../components/ApplicationHeader'
 
 export default class Mediaspecialist extends Component {
 

@@ -13,7 +13,7 @@ export default class Progress extends Component {
     return (
       <div className="content">
         <div>{daysRemaining}</div>
-        <div className="text-size-sm">{dayString} left</div>
+        <div className="text-size-xs lightgrey">{dayString} left</div>
       </div>
     )
   }

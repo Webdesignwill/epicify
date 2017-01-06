@@ -8,7 +8,6 @@ export default class CustomerDropdown extends Component {
   constructor (props) {
     super(props)
     this.clickHandler = this.clickHandler.bind(this)
-    this.scrollTop = this.scrollTop.bind(this)
 
     this.state = {
       expanded: false
@@ -19,9 +18,7 @@ export default class CustomerDropdown extends Component {
     this.setState(prevState => ({
       expanded: !prevState.expanded
     }))
-  }
 
-  scrollTop () {
     window.scrollTo(0, 0)
   }
 
@@ -32,14 +29,11 @@ export default class CustomerDropdown extends Component {
     const selectedText = this.props.customer ? this.props.customer.meta.name : "Select Customer"
 
     return (
-      <div className="sidebar-group">
-        <div className="sidebar-header">Customers</div>
-        <div className={`list-group sidebar-dropdown ${expandedClass}`} onClick={this.clickHandler}>
-          <div className="list-group-item clearfix">
-            <p className="lead select selected">{selectedText} <i className={`fa fa-caret-${caret}`} aria-hidden="true"></i></p>
-          </div>
+      <div className={`sidebar-group ${expandedClass}`}>
+        <div className="sidebar-header selectable" onClick={this.clickHandler}>{selectedText} <i className={`fa fa-caret-${caret}`} aria-hidden="true"></i></div>
+        <div className="list-group sidebar-dropdown">
           {this.props.customers ? this.props.customers.map(customer =>
-            <div className="list-group-item" key={customer.id} onClick={this.scrollTop}>
+            <div className="list-group-item" key={customer.id} onClick={this.clickHandler}>
               <Link to={`/customer/${customer.id}`}>
                 <p className="lead select">{customer.meta.name}</p>
               </Link>

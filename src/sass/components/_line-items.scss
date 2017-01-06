@@ -5,16 +5,16 @@
     position:relative;
     display:inline-block;
     width:100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .line-item-header {
-    padding: 0;
+    padding: 0 5px;
     font-size: 1.2rem;
     position: absolute;
     background: white;
     z-index: 2000;
     left: 22px;
-    top: -8px;
+    top: -10px;
     width: auto;
   }
   .line-item-row {
@@ -23,6 +23,13 @@
     border-left: 0;
     height:60px;
     color: #777;
+
+    &.line-item-row-totals {
+      background-color:rgba(51,126,183,0.05);
+      border-bottom:0;
+      height: 35px;
+      font-weight: 500;
+    }
 
     .line-item {
       border-left:1px solid #ddd;

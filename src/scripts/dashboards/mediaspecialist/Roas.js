@@ -16,7 +16,7 @@ export default class Roas extends Component {
     return (
       <div className="content">
         <div>{actual}</div>
-        <div className="text-size-sm">( {this.props.primarygoaltype} )</div>
+        <div className="text-size-xs lightgrey">({this.props.primarygoaltype})</div>
       </div>
     )
   }

@@ -7,20 +7,12 @@ export default class Pacing extends Component {
 
   render () {
 
-    /* Statuses are
-
-      alarm
-      warning
-      ok
-
-    */
-
     const formattedPercentage = () => {
       return numeral(0.01 * this.props.percentage).format('0%');
     }
 
     return (
-      <div className="content">
+      <div className={`content text-${this.props.status}`}>
         {formattedPercentage()}
       </div>
     )

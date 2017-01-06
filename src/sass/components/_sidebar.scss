@@ -21,9 +21,14 @@
   }
 
   .sidebar-header {
-    padding: 10px 0 0 15px;
-    margin-bottom:10px;
+    position:relative;
+    padding: 10px 0 10px 15px;
     color: black;
+    .fa {
+      position: absolute;
+      right: 20px;
+      top: 38%;
+    }
   }
 
   a:hover, a:focus {
@@ -51,21 +56,26 @@
   }
 
   .sidebar-dropdown {
-    position:relative;
-    height: 40px;
+    height: 0;
     overflow: hidden;
-    .fa {
-      position: absolute;
-      right: 20px;
-      top: 37%;
-    }
+    border-bottom: 1px solid #ddd;
     p.lead {
       padding-left: 15px;
     }
 
+    .list-group-item {
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .sidebar-group {
     &.expanded {
-      height: auto;
-      overflow: visible;
+      .sidebar-dropdown {
+        height: auto;
+        overflow: visible;
+      }
     }
   }
 

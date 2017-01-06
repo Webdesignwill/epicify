@@ -7,6 +7,7 @@ export default class MediaChannels extends Component {
   static propTypes = {}
 
   render () {
+    console.log(this.props.mediachannels)
     return (
       <div className="media-channels row">
         {this.props.mediachannels.length ? this.props.mediachannels.map(mediachannel =>
