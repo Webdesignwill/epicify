@@ -24,8 +24,6 @@ function mapStateToProps(store, props) {
           return campaign
         }
       })
-    } else {
-      campaigns = customer.campaigns
     }
   }
 

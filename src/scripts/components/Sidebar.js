@@ -56,6 +56,9 @@ export default class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
+        <div className="sidebar-logo">
+          <img src="/assets/img/baas-logo.png" />
+        </div>
         <CustomerDropdown params={this.props.params} />
         <div className="sidebar-group">
           <div className="sidebar-header">

@@ -34,8 +34,8 @@ export default class CustomerDropdown extends Component {
     return (
       <div className="sidebar-group">
         <div className="sidebar-header">Customers</div>
-        <div className={`list-group sidebar-dropdown ${expandedClass}`}>
-          <div className="list-group-item clearfix" onClick={this.clickHandler}>
+        <div className={`list-group sidebar-dropdown ${expandedClass}`} onClick={this.clickHandler}>
+          <div className="list-group-item clearfix">
             <p className="lead select selected">{selectedText} <i className={`fa fa-caret-${caret}`} aria-hidden="true"></i></p>
           </div>
           {this.props.customers ? this.props.customers.map(customer =>

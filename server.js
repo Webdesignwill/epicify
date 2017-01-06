@@ -13,6 +13,7 @@ var server = new WebpackDevServer(compiler, {
   filename: 'app.bundle.js',
   hot: true,
   quiet: true,
+  historyApiFallback: true,
   stats: {
     colors: true
   }

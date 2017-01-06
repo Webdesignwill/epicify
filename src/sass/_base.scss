@@ -14,6 +14,7 @@ body {
 }
 
 .table-container {
+  padding-top:15px;
   position:relative;
   padding-left: $sidebarWidth;
 }
@@ -22,4 +23,11 @@ body {
   padding: 0;
   width: 100%;
   margin: 0;
+}
+
+.empty-message {
+  font-size: 5rem;
+  color: lightgrey;
+  margin-top: 40%;
+  text-align: center;
 }
