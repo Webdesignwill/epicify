@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 
@@ -11,7 +11,7 @@ import NoMatch from './pages/404'
 
 import store from './store'
 
-const history = syncHistoryWithStore(hashHistory, store)
+const history = syncHistoryWithStore(browserHistory, store)
 
 const Routes =
   <Provider store={ store }>

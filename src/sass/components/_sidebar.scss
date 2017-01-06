@@ -3,7 +3,7 @@
   @include transition(width, 0.2s, ease-out);
   background-color: #eee;
   position: fixed;
-  left: $applicationSidebarWidth;
+  left: 0;
   width: $sidebarWidth;
   top: 0;
   bottom: 0;
@@ -11,11 +11,14 @@
   overflow: hidden;
   border-right:1px solid #ddd;
 
+  .list-group {
+    margin-bottom: 0;
+  }
+
   .sidebar-header {
-    padding: 11px 0 0 15px;
-    margin-bottom:20px;
+    padding: 10px 0 0 15px;
+    margin-bottom:10px;
     color: black;
-    height: 21px;
   }
 
   a:hover, a:focus {
@@ -35,6 +38,29 @@
 
     &.expanded {
       max-height: 2000px;
+    }
+
+    .selected {
+      color: #777;
+    }
+  }
+
+  .sidebar-dropdown {
+    position:relative;
+    height: 40px;
+    overflow: hidden;
+    .fa {
+      position: absolute;
+      right: 20px;
+      top: 37%;
+    }
+    p.lead {
+      padding-left: 15px;
+    }
+
+    &.expanded {
+      height: auto;
+      overflow: visible;
     }
   }
 
@@ -69,27 +95,17 @@
         color: darken(#337ab7, 15%);
       }
     }
-
-    .fa {
-      position: absolute;
-      left: 15px;
-      top: 41%;
-    }
   }
 
   a {
     display: block;
     position: relative;
-    .fa {
+    .checkbox {
       font-size: 10px;
       position:absolute;
-      right:0;
-      top:5px;
+      left: 16px;
+      top: 14%;
     }
-  }
-
-  .go-right {
-    right:20px;
   }
 }
 
