@@ -10,7 +10,7 @@ export default class MediaChannelList extends Component {
       <ul className="media-channel-list">
         {this.props.mediachannels ? this.props.mediachannels.map(mediachannel =>
           <li key={mediachannel.id} className="clearfix">
-            <a href="#" className="pull-left">{mediachannel.meta.name}</a>
+            <a href={`#media-channel-anchor-${this.props.campaignid + '-' + mediachannel.id}`} className="pull-left">{mediachannel.meta.name}</a>
             <span className="pull-right line-items-count">({mediachannel.line_items.length})</span>
           </li>
         ) : null}

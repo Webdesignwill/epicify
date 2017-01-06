@@ -20,9 +20,7 @@ const Routes =
         <IndexRoute component={ Mediaspecialist } />
 
         <Route component={ Mediaspecialist }>
-          <Route path="customer/(:customerid)" component={ Campaign } >
-            <Route path="campaign/:campaignid" />
-          </Route>
+          <Route path="customer/(:customerid)" component={ Campaign } ></Route>
         </Route>
 
         <Route path="*" component={ NoMatch }/>

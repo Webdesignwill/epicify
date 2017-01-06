@@ -15,6 +15,7 @@ export default class Mediaspecialist extends Component {
       <div className="container">
         <Sidebar params={this.props.params} campaignids={this.props.location.query.campaignid}/>
         <main role="main" className="table-container">
+          <a name="top"></a>
           {this.props.children}
         </main>
       </div>

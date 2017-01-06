@@ -50,18 +50,24 @@ export default class Sidebar extends Component {
   }
 
   render () {
+
+    const customerText = this.props.customer ? "Campaigns" : null
+    const customerName = this.props.customer && this.props.customer.meta.name ? this.props.customer.meta.name + "'s" : null
+
     return (
       <aside className="sidebar">
         <CustomerDropdown params={this.props.params} />
         <div className="sidebar-group">
-          <div className="sidebar-header">Campaigns</div>
+          <div className="sidebar-header">
+            <span className="customer-name">{customerName}</span> {customerText}
+          </div>
           <div className="list-group">
             {this.props.campaigns ? this.props.campaigns.map(campaign =>
               <div className={`list-group-item ${this.toggleClass(campaign.id, '', 'expanded')}`} key={campaign.id}>
                 <Link name={campaign.id} to={{ pathname: `/customer/${this.props.params.customerid}`, query: { campaignid: this.makeUrl(campaign.id) }}}>
                   <p className="lead select"><i className={`checkbox fa fa-${this.toggleClass(campaign.id, 'square-o', 'check-square-o')}`} aria-hidden="true"></i> {campaign.meta.name}</p>
                 </Link>
-                <MediaChannelList mediachannels={campaign.media_channels} />
+                <MediaChannelList campaignid={campaign.id} mediachannels={campaign.media_channels} />
               </div>
             ) : null}
           </div>
