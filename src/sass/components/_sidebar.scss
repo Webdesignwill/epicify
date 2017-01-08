@@ -87,8 +87,22 @@
       padding-right:17px;
       margin-bottom: 3px;
       .line-items-count {
-        color: darkgrey;
         font-weight:normal;
+
+        &.ok {
+          @extend .text-ok;
+        }
+
+        &.warning,
+        &.warning.ok, {
+          @extend .text-warning;
+        }
+
+        &.alarm,
+        &.alarm.warning,
+        &.alarm.ok {
+          @extend .text-alarm;
+        }
       }
     }
   }

@@ -19,44 +19,6 @@ export default class LineItems extends Component {
             <div className="col-sm-12 line-item-header">
               {lineitem.meta.name}
             </div>
-            {index === 0 ? <div className="col-sm-12 line-item-row line-item-row-totals">
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  100%
-                </div>
-              </div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  100%
-                </div>
-              </div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  100%
-                </div>
-              </div>
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item"></div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  <div>€ 154 <span className="lightgrey">(€ 80)</span></div>
-                </div>
-              </div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  <div>€ 154 <span className="lightgrey">(€ 80)</span></div>
-                </div>
-              </div>
-              <div className="col-sm-1 line-item">
-                <div className="content">
-                  <div>€ 154 <span className="lightgrey">(€ 80)</span></div>
-                </div>
-              </div>
-            </div> : null}
             <div className="col-sm-12 line-item-row">
               <div className="col-sm-1 line-item">
                 <Progress daterange={lineitem.config.date_range} />

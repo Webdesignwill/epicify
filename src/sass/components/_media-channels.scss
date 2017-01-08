@@ -1,6 +1,7 @@
 
 .media-channels {
   .media-channel {
+    background-color: rgba(51,126,183,0.05);
     margin-bottom: 15px;
     padding-left:0;
     padding-right:0;
@@ -8,7 +9,33 @@
     h4 {
       font-size:1.6rem;
       font-weight:normal;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    .media-channel-totals {
+      height: 48px;
+      font-weight: 500;
+      margin-bottom:12px;
+
+      .totals-row {
+        height: 100%;
+        background-color: rgba(51,126,183,0.05);
+
+        .total {
+          text-align: center;
+          padding: 0;
+          height: 100%;
+          font-size: 1.1rem;
+
+          .content {
+            height:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+
+      }
     }
   }
 }
