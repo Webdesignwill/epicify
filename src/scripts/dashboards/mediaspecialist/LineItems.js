@@ -13,7 +13,7 @@ export default class LineItems extends Component {
 
   render () {
     return (
-      <div className="line-items clearfix">
+      <div className="line-items col-sm-12 clearfix">
         {this.props.lineitems.length ? this.props.lineitems.map((lineitem, index) =>
           <div className="line-items-wrapper" key={lineitem.id}>
             <div className="col-sm-12 line-item-header">

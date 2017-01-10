@@ -13,19 +13,22 @@
     }
 
     .media-channel-totals {
-      height: 48px;
+      height: 40px;
       font-weight: 500;
       margin-bottom:12px;
 
       .totals-row {
         height: 100%;
-        background-color: rgba(51,126,183,0.05);
+        background-color: white;
+        border: 1px solid #ddd;
+        border-top: 0;
 
         .total {
           text-align: center;
           padding: 0;
           height: 100%;
           font-size: 1.1rem;
+          border-left: 1px solid #ddd;
 
           .content {
             height:100%;
