@@ -68,5 +68,12 @@
     .expandable {
 
     }
+
+    &.not-expandable {
+      .tile-title {
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
   }
 }
