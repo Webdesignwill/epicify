@@ -6,6 +6,7 @@ import ActionsRevenue from './ActionsRevenue'
 import NetworkCPA from './NetworkCPA'
 import Roas from './Roas'
 import TargetActual from './TargetActual'
+import TableHeader from './TableHeader'
 
 export default class LineItems extends Component {
 
@@ -14,12 +15,10 @@ export default class LineItems extends Component {
   render () {
     return (
       <div className="line-items col-sm-12 clearfix">
+        <TableHeader />
         {this.props.lineitems.length ? this.props.lineitems.map((lineitem, index) =>
           <div className="line-items-wrapper" key={lineitem.id}>
-            <div className="col-sm-12 line-item-header">
-              {lineitem.meta.name}
-            </div>
-            <div className="col-sm-12 line-item-row">
+            <div className="line-item-row">
               <div className="col-sm-1 line-item">
                 <Progress daterange={lineitem.config.date_range} />
               </div>
