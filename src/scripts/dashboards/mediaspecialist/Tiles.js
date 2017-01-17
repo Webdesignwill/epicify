@@ -7,7 +7,7 @@ export default class Tiles extends Component {
   static propTypes = {}
 
   render () {
-    console.log(this.props.mediachannel)
+    console.log(this.props.mediachannel) 
     return (
       <div className="tiles col-sm-12">
         <h4 className="tiles-header">{this.props.mediachannel.meta.name}</h4>
@@ -33,7 +33,7 @@ export default class Tiles extends Component {
                 </div>
                 <hr />
                 <div className="content-row">
-                  <p>Budget (including fee's)</p>
+                  <p>Budget (including fee`s)</p>
                   <div className="amount">
                     <Currency amount={this.props.mediachannel.config.budget.total} />
                   </div>
@@ -106,7 +106,7 @@ export default class Tiles extends Component {
           </div>
         </div>
         <div className="row tiles-row">
-          <div className="col-sm-4 tile">
+          <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
               <div className="tile-title">
                 <p className="tile-header"><strong>CPM</strong></p>
@@ -115,7 +115,7 @@ export default class Tiles extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 tile">
+          <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
               <div className="tile-title">
                 <p className="tile-header"><strong>CPC</strong></p>
@@ -124,7 +124,7 @@ export default class Tiles extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 tile">
+          <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
               <div className="tile-title">
                 <p className="tile-header"><strong>CTR</strong></p>

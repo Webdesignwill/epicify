@@ -1,7 +1,7 @@
 
 .sidebar {
   @include transition(width, 0.2s, ease-out);
-  background-color: #eee;
+  background-color: #1c2a41;
   position: fixed;
   left: 0;
   width: $sidebarWidth;
@@ -23,7 +23,7 @@
   .sidebar-header {
     position:relative;
     padding: 10px 0 10px 15px;
-    color: black;
+    color: #DFE4ED;
     .fa {
       position: absolute;
       right: 20px;
@@ -41,13 +41,16 @@
     padding: 0;
     position: relative;
     border-radius: 0;
-    border-right:0;
+    border:0;
+    background-color: #1d3152;
+    color: #DFE4ED;
     &:last-child, &:first-child {
       border-radius: 0;
     }
 
     &.expanded {
       max-height: 2000px;
+      color: white;
     }
 
     .selected {
@@ -58,7 +61,6 @@
   .sidebar-dropdown {
     height: 0;
     overflow: hidden;
-    border-bottom: 1px solid #ddd;
     p.lead {
       padding-left: 15px;
     }
@@ -80,7 +82,7 @@
   }
 
   .media-channel-list {
-    padding-left:20px;
+    padding-left:35px;
     list-style: none;
     li {
       font-size:1.1rem;
@@ -110,7 +112,7 @@
   .lead {
     margin-bottom: 0;
     padding: 10px 0px 10px 35px;
-    color: #337ab7;
+    color: #DFE4ED;
     font-size: 1.4rem;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -121,19 +123,35 @@
       cursor: pointer;
 
       &:hover, &:focus {
-        color: darken(#337ab7, 15%);
+        color: white;
       }
     }
+  }
+
+  .fa-circle {
+    margin-left: 14px;
   }
 
   a {
     display: block;
     position: relative;
+    color: #DFE4ED;
     .checkbox {
       font-size: 10px;
       position:absolute;
       left: 16px;
       top: 14%;
+    }
+
+    &:hover, &:focus {
+      color: white;
+    }
+
+    &.media-channel-item {
+      width: 75%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

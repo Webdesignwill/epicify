@@ -15,7 +15,7 @@
   }
 
   .tiles-header {
-
+    padding: 8px 0 8px 8px;
   }
 
   .tile {
@@ -24,7 +24,7 @@
     }
     .tile-inner {
       background-color: white;
-      border-top: 2px solid #eee;
+      border-top: 2px solid #e7eaec;
       padding: 10px;
     }
 
@@ -65,12 +65,9 @@
       }
     }
 
-    .expandable {
-
-    }
-
-    &.not-expandable {
+    &.single-row {
       .tile-title {
+        padding-bottom: 0;
         margin-bottom: 0;
         border-bottom: 0;
       }
