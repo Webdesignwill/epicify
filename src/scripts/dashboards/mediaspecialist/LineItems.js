@@ -1,62 +1,36 @@
 import React, { Component, PropTypes } from 'react'
-import Progress from './Progress'
-import Currency from './Currency'
-import Percentage from './Percentage'
-import ActionsRevenue from './ActionsRevenue'
-import NetworkCPA from './NetworkCPA'
-import Roas from './Roas'
-import TargetActual from './TargetActual'
+import LineItem from './LineItem'
 import TableHeader from './TableHeader'
 
 export default class LineItems extends Component {
 
   static propTypes = {}
 
+  constructor (props) {
+    super(props)
+    this.toggleLineItemData = this.toggleLineItemData.bind(this)
+  }
+
+  toggleLineItemData (index, action, event) {
+    if(event) {
+      event.stopPropagation()
+    }
+
+    this.refs['toggle-' + index].classList[action]('expanded')
+  }
+
   render () {
     return (
       <div className="line-items col-sm-12 clearfix">
         <TableHeader />
         {this.props.lineitems.length ? this.props.lineitems.map((lineitem, index) =>
-          <div className="line-items-wrapper" key={lineitem.id}>
-            <div className="line-item-row">
-              <div className="col-sm-1 line-item">
-                <Progress daterange={lineitem.config.date_range} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <Currency amount={lineitem.config.budget.network} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <Percentage status={lineitem.data.to_date.pacing.status} percentage={lineitem.data.to_date.pacing.actual} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <Percentage status={lineitem.data.yesterday.pacing.status} percentage={lineitem.data.yesterday.pacing.actual} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <Currency amount={lineitem.data.to_date.budget.remaining.network.per_day} showcents="true" />
-              </div>
-              <div className="col-sm-1 line-item">
-                <ActionsRevenue primarygoalid={lineitem.config.primary_goal.id} goals={lineitem.data.to_date.goals} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <NetworkCPA primarygoalid={lineitem.config.primary_goal.id} goals={lineitem.data.to_date.goals} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <NetworkCPA primarygoalid={lineitem.config.primary_goal.id} goals={lineitem.data.yesterday.goals} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <Roas primarygoaltype={lineitem.config.primary_goal.meta.type} data={lineitem.data} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <TargetActual data={lineitem.data.to_date.cpm} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <TargetActual data={lineitem.data.to_date.cpc} />
-              </div>
-              <div className="col-sm-1 line-item">
-                <TargetActual data={lineitem.data.to_date.ctr} />
-              </div>
+          <div className="line-items-wrapper" key={lineitem.id} ref={`toggle-${index}`} onClick={() => this.toggleLineItemData(index, 'add')}>
+            <LineItem key={lineitem.id} lineitem={lineitem} />
+            <div className="line-item-data">
+              <span className="close" onClick={(event) => this.toggleLineItemData(index, 'remove', event)}>
+                close <i className="fa fa-times" aria-hidden="true"></i>
+              </span>
             </div>
-            {index === 4 ? <div className="expanding-thing"></div> : null}
           </div>
         ) : null}
       </div>
