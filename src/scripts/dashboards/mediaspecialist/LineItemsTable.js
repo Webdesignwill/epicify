@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import LineItems from '../../containers/dashboards/mediaspecialist/LineItems'
 import TableHeader from './TableHeader'
-import { lineItemSelected } from '../../actions/dashboards/mediaspecialist'
+import LineItemData from './LineItemData'
 
 export default class LineItemsTable extends Component {
 
@@ -31,6 +31,7 @@ export default class LineItemsTable extends Component {
               <span className="close" onClick={(event) => this.toggleLineItemData(index, 'remove', event)}>
                 close <i className="fa fa-times" aria-hidden="true"></i>
               </span>
+              <LineItemData lineitem={lineitem} />
             </div>
           </div>
         ) : null}
