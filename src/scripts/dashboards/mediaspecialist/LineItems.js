@@ -1,38 +1,39 @@
 import React, { Component, PropTypes } from 'react'
-import LineItem from './LineItem'
-import TableHeader from './TableHeader'
+
+import Name from './lineitems/Name'
+import Progress from './lineitems/Progress'
+import NetworkBudget from './lineitems/NetworkBudget'
+import PacingToDate from './lineitems/PacingToDate'
+import PacingYesterday from './lineitems/PacingYesterday'
+import LeftPerDay from './lineitems/LeftPerDay'
+import ActionsRevenue from './lineitems/ActionsRevenue'
+import NetworkCpaToDate from './lineitems/NetworkCpaToDate'
+import NetworkCpaYesterday from './lineitems/NetworkCpaYesterday'
+import Roas from './lineitems/Roas'
+import Cpc from './lineitems/Cpc'
+import Cpm from './lineitems/Cpm'
+import Ctr from './lineitems/Ctr'
 
 export default class LineItems extends Component {
 
   static propTypes = {}
 
-  constructor (props) {
-    super(props)
-    this.toggleLineItemData = this.toggleLineItemData.bind(this)
-  }
-
-  toggleLineItemData (index, action, event) {
-    if(event) {
-      event.stopPropagation()
-    }
-
-    this.refs['toggle-' + index].classList[action]('expanded')
-  }
-
   render () {
     return (
-      <div className="line-items col-sm-12 clearfix">
-        <TableHeader />
-        {this.props.lineitems.length ? this.props.lineitems.map((lineitem, index) =>
-          <div className="line-items-wrapper" key={lineitem.id} ref={`toggle-${index}`} onClick={() => this.toggleLineItemData(index, 'add')}>
-            <LineItem key={lineitem.id} lineitem={lineitem} />
-            <div className="line-item-data">
-              <span className="close" onClick={(event) => this.toggleLineItemData(index, 'remove', event)}>
-                close <i className="fa fa-times" aria-hidden="true"></i>
-              </span>
-            </div>
-          </div>
-        ) : null}
+      <div className="line-item-row">
+        <Name lineitem={this.props.lineitem} />
+        <Progress lineitem={this.props.lineitem} />
+        <NetworkBudget lineitem={this.props.lineitem} />
+        <PacingToDate lineitem={this.props.lineitem} />
+        <PacingYesterday lineitem={this.props.lineitem} />
+        <LeftPerDay lineitem={this.props.lineitem} />
+        <ActionsRevenue lineitem={this.props.lineitem} />
+        <NetworkCpaToDate lineitem={this.props.lineitem} />
+        <NetworkCpaYesterday lineitem={this.props.lineitem} />
+        <Roas lineitem={this.props.lineitem} />
+        <Cpc lineitem={this.props.lineitem} />
+        <Cpm lineitem={this.props.lineitem} />
+        <Ctr lineitem={this.props.lineitem} />
       </div>
     )
   }

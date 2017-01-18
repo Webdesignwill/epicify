@@ -1,3 +1,5 @@
+$selectedColour: #fcb041;
+
 .columnWidths {
   &:nth-child(1) {
     width: 21%;
@@ -51,7 +53,7 @@
   }
 
   .line-items-wrapper {
-    @include transition(height, 0.2s, ease-in);
+    @include transition(height, 0.2s, ease-out);
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -82,11 +84,24 @@
     }
   }
   .line-item-row {
+    @include transition(backround-color, 0.2s, ease-in);
     padding: 0;
     height:50px;
 
+    &:hover {
+      background-color: $selectedColour;
+      color: white;
+      border-color: $selectedColour;
+
+      .content {
+        color: white;
+        .lightgrey {
+          color: white;
+        }
+      }
+    }
+
     .line-item {
-      @include transition(backround-color, 0.2s, ease-in);
       @extend .columnWidths;
       text-align: center;
       float: left;
@@ -96,31 +111,12 @@
       cursor: pointer;
       border-bottom: 1px solid #e7eaec;
 
-      &:hover {
-        background-color: #11609b;
-        color: white;
-        border-color: #11609b;
-
-        .content {
-          color: white;
-          .lightgrey {
-            color: white;
-          }
-        }
-      }
-
       &:first-child {
         border-left: 1px solid #eee;
-        &:hover {
-          border-color: #11609b;
-        }
       }
 
       &:last-child {
         border-right: 1px solid #eee;
-        &:hover {
-          border-color: #11609b;
-        }
       }
 
       .content {
@@ -137,11 +133,28 @@
       height:350px;
       border: 1px solid #eee;
       border-top: 0;
+      border-bottom: 0;
       .line-item-row {
+        background-color: $selectedColour;
+        color: white;
+        border-color: $selectedColour;
+
+        .content {
+          color: white;
+          .lightgrey {
+            color: white;
+          }
+        }
+
         .line-item {
           border: 0;
         }
       }
+
+      .line-item-data {
+        border: 2px solid #fcb041;
+      }
+
     }
     .line-item-data {
       height: 300px;

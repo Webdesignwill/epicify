@@ -9,3 +9,12 @@ export function fetchData () {
     })
   }
 }
+
+export function lineItemSelected (lineitemid) {
+  return function (dispatch) {
+    dispatch({
+      type: "LINEITEM_SELECTED",
+      payload: lineitemid
+    })
+  }
+}

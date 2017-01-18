@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import Currency from './Currency'
-import Percentage from './Percentage'
+import Currency from '../../components/Currency'
+import Percentage from '../../components/Percentage'
 
 export default class Tiles extends Component {
 

@@ -1,4 +1,6 @@
 
+$selectedColour: #fcb041;
+
 .line-item-data {
   position: relative;
   .close {
@@ -6,5 +8,14 @@
     right: 15px;
     top: 15px;
     font-size:14px;
+    font-weight:300;
+    color: black;
+    opacity: 0.7;
+    text-shadow: none;
+    float: initial;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
