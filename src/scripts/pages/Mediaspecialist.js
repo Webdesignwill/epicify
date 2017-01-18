@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { fetchData } from '../actions/dashboards/mediaspecialist'
 import Sidebar from '../containers/Sidebar'
+import StickyHeader from '../components/StickyHeader'
 
 export default class Mediaspecialist extends Component {
 
@@ -17,6 +18,7 @@ export default class Mediaspecialist extends Component {
         <main role="main">
           <a name="top"></a>
           <div className="table-container">
+            <StickyHeader customer={this.props.customer} />
             {this.props.children}
             {this.props.params.customerid === undefined ?
               <div className="empty-message">

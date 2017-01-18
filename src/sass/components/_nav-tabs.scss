@@ -5,14 +5,14 @@
     border-radius: 0;
 
     a {
-      color: white;
+      color: $white;
     }
 
     &:first-child {
       &.active, &:hover, &:focus {
-        border-left-color:white;
+        border-left-color:$white;
         a {
-          border-left-color:white;
+          border-left-color:$white;
         }
       }
     }
@@ -31,10 +31,10 @@
 
     &.active {
       border-radius: 0;
-      border-top-color:white;
+      border-top-color:$white;
       a {
         border-radius: 0;
-        border-top-color:white;
+        border-top-color:$white;
       }
     }
   }

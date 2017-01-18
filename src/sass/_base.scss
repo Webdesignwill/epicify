@@ -15,8 +15,8 @@ body {
 }
 
 .table-container {
-  padding-top:15px;
   position:relative;
+  padding-top: $stickyHeaderHeight;
   padding-left: $sidebarWidth;
 }
 

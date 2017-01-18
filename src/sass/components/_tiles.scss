@@ -16,6 +16,8 @@
 
   .tiles-header {
     padding: 8px 0 8px 8px;
+    background-color: #1c2a41;
+    color: white;
   }
 
   .tile {
@@ -26,6 +28,8 @@
       background-color: white;
       border-top: 2px solid #e7eaec;
       padding: 10px;
+
+      font-size: 12px;
     }
 
     .tile-title {
@@ -66,8 +70,25 @@
     }
 
     &.single-row {
+
+      .tile-inner {
+        @extend .clearfix;
+      }
+
+      em {
+        padding: 0;
+        color: #AAA;
+        font-weight: 300;
+        font-size: 1.2rem;
+
+        .content {
+          display: inline;
+        }
+      }
+
       .tile-title {
         padding-bottom: 0;
+        padding-left: 0;
         margin-bottom: 0;
         border-bottom: 0;
       }

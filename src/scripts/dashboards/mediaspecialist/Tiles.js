@@ -7,7 +7,6 @@ export default class Tiles extends Component {
   static propTypes = {}
 
   render () {
-    console.log(this.props.mediachannel) 
     return (
       <div className="tiles col-sm-12">
         <h4 className="tiles-header">{this.props.mediachannel.meta.name}</h4>
@@ -108,29 +107,38 @@ export default class Tiles extends Component {
         <div className="row tiles-row">
           <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
-              <div className="tile-title">
-                <p className="tile-header"><strong>CPM</strong></p>
+              <strong className="tile-title col-sm-7">CPM</strong>
+
+              {this.props.mediachannel.data.to_date.cpm.target ? <em>(<Percentage percentage={this.props.mediachannel.data.to_date.cpm.target} />)</em> : null}
+
+              <div className="col-sm-4">
                 <Percentage status={this.props.mediachannel.data.to_date.cpm.status} percentage={this.props.mediachannel.data.to_date.cpm.actual} />
-                <em>{this.props.mediachannel.data.to_date.cpm.target ? (this.props.mediachannel.data.to_date.cpm.target) : null}</em>
               </div>
+
             </div>
           </div>
+
           <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
-              <div className="tile-title">
-                <p className="tile-header"><strong>CPC</strong></p>
+              <strong className="tile-title col-sm-7">CPC</strong>
+
+              <div className="col-sm-4">
                 <Percentage status={this.props.mediachannel.data.to_date.cpc.status} percentage={this.props.mediachannel.data.to_date.cpc.actual} />
-                <em>{this.props.mediachannel.data.to_date.cpc.target ? (this.props.mediachannel.data.to_date.cpc.target) : null}</em>
               </div>
+
+              {this.props.mediachannel.data.to_date.cpc.target ? <em>(<Percentage percentage={this.props.mediachannel.data.to_date.cpc.target} />)</em> : null}
             </div>
           </div>
+
           <div className="col-sm-4 tile single-row">
             <div className="tile-inner">
-              <div className="tile-title">
-                <p className="tile-header"><strong>CTR</strong></p>
+              <strong className="tile-title col-sm-7">CTR</strong>
+
+              <div className="col-sm-4">
                 <Percentage status={this.props.mediachannel.data.to_date.ctr.status} percentage={this.props.mediachannel.data.to_date.ctr.actual} />
-                <em>{this.props.mediachannel.data.to_date.ctr.target ? (this.props.mediachannel.data.to_date.ctr.target) : null}</em>
               </div>
+
+              {this.props.mediachannel.data.to_date.ctr.target ? <em>(<Percentage percentage={this.props.mediachannel.data.to_date.ctr.target} />)</em> : null}
             </div>
           </div>
         </div>

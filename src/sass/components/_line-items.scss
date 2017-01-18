@@ -9,16 +9,16 @@
     width:100%;
 
     &:nth-child(even) {
-      background-color: #f9f9f9;
+      // background-color: #f9f9f9;
     }
   }
   .line-items-header {
     font-size: 12px;
-    font-weight: bold;
-    border-top: 2px solid #e7eaec;
+    font-weight: 400;
     border-bottom: 1px solid #e7eaec;
-    height: 60px;
+    height: 50px;
     text-align: center;
+    background-color: rgba(28, 42, 65, 0.6);
     em {
       font-weight: normal;
     }
@@ -28,6 +28,7 @@
       display:flex;
       flex-direction: column;
       justify-content: center;
+      color: white;
     }
   }
   // .line-item-header {

@@ -2,9 +2,9 @@
 .media-channels {
   .media-channel {
     background-color: #f3f3f4;
-    border-top: 1px solid #e7eaec;
     padding-left:0;
     padding-right:0;
+    padding-bottom: 45px;
 
     h4 {
       font-size:1.6rem;
@@ -19,7 +19,7 @@
 
       .totals-row {
         height: 100%;
-        background-color: white;
+        background-color: $white;
         border: 1px solid #ddd;
         border-top: 0;
 
