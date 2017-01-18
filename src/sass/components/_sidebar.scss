@@ -49,7 +49,10 @@
 
     &.expanded {
       max-height: 2000px;
-      color: $white;
+      background-color:#304567;
+      p.lead {
+        color: white;
+      }
     }
 
     .selected {
@@ -116,7 +119,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     width: 85%;
-    $white-space: nowrap;
+    white-space: nowrap;
 
     &.select {
       cursor: pointer;
@@ -134,7 +137,7 @@
   a {
     display: block;
     position: relative;
-    color: #DFE4ED;
+    color: white;
     .checkbox {
       font-size: 10px;
       position:absolute;

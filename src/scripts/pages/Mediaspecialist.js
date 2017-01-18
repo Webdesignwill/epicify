@@ -18,7 +18,6 @@ export default class Mediaspecialist extends Component {
         <main role="main">
           <a name="top"></a>
           <div className="table-container">
-            <StickyHeader customer={this.props.customer} />
             {this.props.children}
             {this.props.params.customerid === undefined ?
               <div className="empty-message">

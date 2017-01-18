@@ -1,24 +1,28 @@
 
 .line-items {
+  padding: 15px 15px 65px 15px;
+  background-color: white;
   .line-items-wrapper, .line-items-header{
     background-color: white;
   }
 
   .line-items-wrapper {
-    position:relative;
-    width:100%;
+    position: relative;
+    width: 100%;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
 
     &:nth-child(even) {
-      // background-color: #f9f9f9;
+      background-color: rgba(28,42,65,0.02);
+
     }
   }
   .line-items-header {
     font-size: 12px;
     font-weight: 400;
-    border-bottom: 1px solid #e7eaec;
     height: 50px;
     text-align: center;
-    background-color: rgba(28, 42, 65, 0.6);
+    background-color: rgb(28, 42, 65);
     em {
       font-weight: normal;
     }
@@ -43,14 +47,28 @@
   .line-item-row {
     padding: 0;
     height:50px;
-    color: #777;
     border-bottom: 1px solid #e7eaec;
 
     .line-item {
+      @include transition(backround-color, 0.2s, ease-out);
+      @include transition(color, 0.4s, ease-out);
       text-align: center;
       padding: 0;
       height: 100%;
       font-size: 1.1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fcb041;
+        color: white;
+
+        .content {
+          color: white;
+          .lightgrey {
+            color: white;
+          }
+        }
+      }
 
       .content {
         height:100%;

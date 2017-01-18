@@ -16,8 +16,9 @@
 
   .tiles-header {
     padding: 8px 0 8px 8px;
-    background-color: #1c2a41;
+    background-color: #11609b;
     color: white;
+    border-left: 2px solid #29aae1;
   }
 
   .tile {
@@ -26,7 +27,7 @@
     }
     .tile-inner {
       background-color: white;
-      border-top: 2px solid #e7eaec;
+      border-left: 2px solid #8dc63f;
       padding: 10px;
 
       font-size: 12px;

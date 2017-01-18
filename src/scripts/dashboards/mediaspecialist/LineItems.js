@@ -56,6 +56,7 @@ export default class LineItems extends Component {
                 <TargetActual data={lineitem.data.to_date.ctr} />
               </div>
             </div>
+            {index === 4 ? <div className="expanding-thing"></div> : null}
           </div>
         ) : null}
       </div>
