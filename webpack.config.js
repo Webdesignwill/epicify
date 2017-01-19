@@ -13,6 +13,7 @@ var config = {
   ],
 
   output: {
+    publicPath: '/',
     path: __dirname + '/public',
     filename: 'assets/script/app.bundle.js'
   },
@@ -34,7 +35,7 @@ var config = {
       loader: "babel-loader",
       query: {
         presets: ['es2015', 'react', 'stage-0'],
-        plugins: ['babel-plugin-transform-decorators-legacy']
+        plugins: ['react-hot-loader/babel', 'babel-plugin-transform-decorators-legacy']
       }
     }]
   },
