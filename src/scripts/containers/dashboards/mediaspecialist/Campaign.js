@@ -4,9 +4,10 @@ import Campaign from '../../../dashboards/mediaspecialist/Campaign';
 function mapStateToProps(store, props) {
 
   let campaigns = []
+  let customer = null
 
   if(!!store.customers.data) {
-    let customer = store.customers.data.filter((customer) => {
+    customer = store.customers.data.filter((customer) => {
       if(customer.id === parseInt(props.params.customerid)) {
         return customer.campaigns
       }
@@ -28,7 +29,8 @@ function mapStateToProps(store, props) {
   }
 
   return {
-    campaigns: campaigns
+    campaigns,
+    customer
   }
 }
 

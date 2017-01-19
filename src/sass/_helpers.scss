@@ -49,8 +49,12 @@
   cursor: pointer;
 }
 
-.lightgrey {
+.lightgrey, .text-lightgrey {
   color: #aaa;
+}
+
+.text-darkgrey {
+  color: grey;
 }
 
 .text-alarm {

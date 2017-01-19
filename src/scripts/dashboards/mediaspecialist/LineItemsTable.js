@@ -12,12 +12,8 @@ export default class LineItemsTable extends Component {
     this.toggleLineItemData = this.toggleLineItemData.bind(this)
   }
 
-  toggleLineItemData (index, action, event) {
-    if(event) {
-      event.stopPropagation()
-    }
-
-    this.refs['toggle-' + index].classList[action]('expanded')
+  toggleLineItemData (index) {
+    this.refs['toggle-' + index].classList.toggle('expanded')
   }
 
   render () {
@@ -25,14 +21,11 @@ export default class LineItemsTable extends Component {
       <div className="line-items col-sm-12 clearfix">
         <TableHeader />
         {this.props.lineitems.length ? this.props.lineitems.map((lineitem, index) =>
-          <div className="line-items-wrapper" key={lineitem.id} ref={`toggle-${index}`} onClick={() => this.toggleLineItemData(index, 'add')}>
-            <LineItems key={lineitem.id} lineitem={lineitem} />
-            <div className="line-item-data">
-              <span className="close" onClick={(event) => this.toggleLineItemData(index, 'remove', event)}>
-                close <i className="fa fa-times" aria-hidden="true"></i>
-              </span>
-              <LineItemData lineitem={lineitem} />
+          <div className="line-items-wrapper" key={lineitem.id} ref={`toggle-${index}`}>
+            <div onClick={(event) => this.toggleLineItemData(index)}>
+              <LineItems key={lineitem.id} lineitem={lineitem} />
             </div>
+            <LineItemData lineitem={lineitem} />
           </div>
         ) : null}
       </div>
