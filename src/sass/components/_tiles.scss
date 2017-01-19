@@ -1,6 +1,26 @@
 
 .tiles {
 
+  height: 63px;
+  overflow: hidden;
+
+  .fa-times {
+    display:none;
+  }
+
+  &.expanded {
+    height: auto;
+    overflow: visible;
+
+    .fa-expand {
+      display:none;
+    }
+
+    .fa-times {
+      display:block;
+    }
+  }
+
   hr {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -19,6 +39,11 @@
     background-color: #11609b;
     color: white;
     border-left: 2px solid #29aae1;
+    cursor: pointer;
+
+    &:hover {
+      color: #fcb041;
+    }
   }
 
   .tile {
@@ -28,20 +53,21 @@
     .tile-inner {
       background-color: white;
       border-left: 2px solid #11609b;
-      padding: 10px;
-
       font-size: 12px;
     }
 
     .tile-title {
       @extend .clearfix;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding: 10px;
 
       .content {
         float:right;
       }
+    }
+
+    .tile-content {
+      padding: 10px;
     }
 
     .tile-header {
@@ -75,9 +101,16 @@
       .tile-inner {
         @extend .clearfix;
       }
+      .percent {
+        padding: 10px 10px 0 0;
+      }
+      .target {
+        @extend .pull-right;
+        padding: 10px 10px 0 0;
+        text-align: right;
+      }
 
       em {
-        padding: 0;
         color: #AAA;
         font-weight: 300;
         font-size: 1.2rem;
@@ -88,10 +121,7 @@
       }
 
       .tile-title {
-        padding-bottom: 0;
-        padding-left: 0;
-        margin-bottom: 0;
-        border-bottom: 0;
+        border: 0;
       }
     }
   }

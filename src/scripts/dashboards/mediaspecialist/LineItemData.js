@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import Details from './itemdata/Details'
 
 export default class LineItemData extends Component {
 
@@ -21,15 +22,21 @@ export default class LineItemData extends Component {
         <div className="line-item-data-header clearfix">
           <div className="toolbar">
             <div className="col-sm-8 title">
-              <h4>{this.props.lineitem.meta.name} <em className="text-size-sm text-darkgrey">({this.props.lineitem.config.primary_goal.meta.name})</em></h4>
               <p className="text-size-sm">
-                From <span className="text-darkgrey">{startdate}</span> to <span className="text-darkgrey">{enddate}</span>
+                <span className="text-size-sm text-darkgrey">From</span> {startdate} <span className="text-size-sm text-darkgrey">to</span> {enddate}
+              </p>
+              <p className="text-size-sm">
+                <span className="text-size-sm text-darkgrey">Goal</span> ({this.props.lineitem.config.primary_goal.meta.name})
               </p>
             </div>
             <div className="pull-right">
               <i className="fa fa-thumb-tack pull-right" aria-hidden="true"></i>
             </div>
           </div>
+        </div>
+
+        <div className="line-item-data-content">
+          <Details lineitem={this.props.lineitem} />
         </div>
       </div>
     )

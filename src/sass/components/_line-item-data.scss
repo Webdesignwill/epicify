@@ -5,7 +5,6 @@ $selectedColour: #fcb041;
   position: relative;
   border: 2px solid #fcb041;
   border-top: 0;
-  height: 300px;
 
   .toolbar {
     @extend .clearfix;
@@ -29,6 +28,9 @@ $selectedColour: #fcb041;
 
   .title {
     padding-left: 8px;
+    em {
+      margin-left:10px;
+    }
     h4, p {
       margin: 0;
       padding: 0;
@@ -38,4 +40,58 @@ $selectedColour: #fcb041;
       margin-bottom: 5px;
     }
   }
+
+  .line-item-data-content {
+    .line-item-data-row {
+      background-color: white;
+
+      .data-row-header {
+        cursor: pointer;
+        padding: 10px;
+
+        .fa {
+          margin-top: 4px;
+        }
+
+        .fa-times {
+          display:none;
+        }
+
+        &:hover {
+          color: #fcb041;
+        }
+      }
+      .data-row-content {
+        height: 0;
+        overflow: hidden;
+        .inner {
+          padding: 0 10px 10px 10px;
+          p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      &.expanded {
+        .data-row-header {
+          color: #fcb041;
+          border-bottom: 1px solid #eee;
+          margin-bottom: 10px;
+
+          .fa-expand {
+            display:none;
+          }
+          .fa-times {
+            display:block;
+          }
+        }
+        .data-row-content {
+          height: auto;
+          overflow: visible;
+        }
+      }
+    }
+  }
+
 }
