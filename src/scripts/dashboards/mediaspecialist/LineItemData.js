@@ -13,8 +13,6 @@ export default class LineItemData extends Component {
 
   render () {
 
-    console.log(this.props.lineitem)
-
     let startdate = null,
         enddate = null
 
