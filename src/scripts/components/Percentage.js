@@ -14,9 +14,9 @@ export default class Pacing extends Component {
     const status = this.props.status ? 'text-'+this.props.status : ""
 
     return (
-      <div className={`content ${status}`}>
+      <span className={`content ${status}`}>
         {formattedPercentage()}
-      </div>
+      </span>
     )
   }
 }

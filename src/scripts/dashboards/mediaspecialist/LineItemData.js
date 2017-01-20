@@ -1,5 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import Details from './itemdata/Details'
+import Budget from './itemdata/Budget'
+import NetSpendTodate from './itemdata/NetSpendTodate'
+import NetSpendYesterday from './itemdata/NetSpendYesterday'
+import SpendBreakdownTodate from './itemdata/SpendBreakdownTodate'
+import SpendBreakdownYesterday from './itemdata/SpendBreakdownYesterday'
+import RemainingNetworkBudget from './itemdata/RemainingNetworkBudget'
 
 export default class LineItemData extends Component {
 
@@ -37,6 +43,12 @@ export default class LineItemData extends Component {
 
         <div className="line-item-data-content">
           <Details lineitem={this.props.lineitem} />
+          <Budget lineitem={this.props.lineitem} />
+          <NetSpendTodate lineitem={this.props.lineitem} />
+          <NetSpendYesterday lineitem={this.props.lineitem} />
+          <SpendBreakdownTodate lineitem={this.props.lineitem} />
+          <SpendBreakdownYesterday lineitem={this.props.lineitem} />
+          <RemainingNetworkBudget lineitem={this.props.lineitem} />
         </div>
       </div>
     )

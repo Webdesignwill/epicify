@@ -12,9 +12,9 @@ export default class Currency extends Component {
     }
 
     return (
-      <div className="content">
+      <span className="content">
         € {formattedCurrency()}
-      </div>
+      </span>
     )
   }
 }
